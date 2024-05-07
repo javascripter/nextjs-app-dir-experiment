@@ -1,5 +1,5 @@
 'use client'
-import { useRouter } from 'next/navigation'
+import { isViewTransitionEnabled } from '@/config/view-transitions'
 import React from 'react'
 import {
   Dialog,
@@ -61,6 +61,7 @@ const styles = css.create({
     animationDuration: `${ANIMATION_DURATION}ms`,
   },
   dialog: {
+    margin: 16,
     borderRadius: 16,
     paddingHorizontal: 16,
     paddingVertical: 8,
@@ -76,12 +77,18 @@ export function Modal({
   children,
   ...props
 }: ModalProps) {
+  const animationStyle = isViewTransitionEnabled
+    ? null
+    : isOpen
+    ? styles.fadeIn
+    : styles.fadeOut
+
   return (
     <ModalOverlay
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       isDismissable={isDismissable}
-      {...css.props(styles.overlay, isOpen ? styles.fadeIn : styles.fadeOut)}
+      {...css.props(styles.overlay, animationStyle)}
     >
       <AriaModal>
         <Dialog {...props} {...css.props(styles.dialog, style)}>
