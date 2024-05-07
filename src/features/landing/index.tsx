@@ -2,7 +2,7 @@
 import { useCanGoBack } from '@/providers/router-can-go-back-provider'
 import { Button } from '@/components/button'
 import * as html from '@/components/html'
-import Link from 'next/link'
+import { Link } from '@/components/link'
 
 import { css } from 'react-strict-dom'
 

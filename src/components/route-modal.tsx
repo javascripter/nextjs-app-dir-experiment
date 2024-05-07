@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation'
 import { ANIMATION_DURATION, Modal } from './modal'
 import React from 'react'
 import { css } from 'react-strict-dom'
+import { isViewTransitionEnabled } from '@/config/view-transitions'
 
 function useRouteModalProps() {
   const router = useRouter()
@@ -10,6 +11,10 @@ function useRouteModalProps() {
   const [isOpen, setIsOpen] = React.useState(true)
 
   const onOpenChange = (value: boolean) => {
+    if (isViewTransitionEnabled) {
+      router.back()
+      return
+    }
     if (value) {
       setIsOpen(true)
       return

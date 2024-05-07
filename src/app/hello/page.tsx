@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+import { Link } from '@/components/link'
 import { useCanGoBack } from '@/providers/router-can-go-back-provider'
 
 export default function HelloPage() {
