@@ -10,13 +10,13 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "next": "14.2.2",
+    "next": "14.2.3",
     "next-view-transitions": "^0.1.1",
     "patch-package": "^8.0.0",
     "react": "^18",
-    "react-aria-components": "^1.1.1",
+    "react-aria-components": "^1.2.0",
     "react-dom": "^18",
-    "react-strict-dom": "^0.0.9",
+    "react-strict-dom": "^0.0.10",
     "stylex-webpack": "^0.3.2"
   },
   "devDependencies": {
@@ -25,6 +25,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.2"
+    "eslint-config-next": "14.2.3"
   }
 }
